@@ -32,7 +32,7 @@ class RoomTableViewController: UITableViewController, PCRoomDelegate {
         alertCtrl.addAction(UIAlertAction(title: "Add", style: .default, handler: { action in
             guard let room = self.room else { return }
             guard let message = self.messageField.text else { return }
-            guard message.characters.count > 0 else { return }
+            guard message.count > 0 else { return }
             
             self.currentUser?.addMessage(text: message, to: room, completionHandler: { (messsage, error) in
                 guard error == nil else { return }
@@ -76,7 +76,7 @@ class RoomTableViewController: UITableViewController, PCRoomDelegate {
         if tableView == self.tableView {
             let message = messages[(indexPath as NSIndexPath).row]
             
-            if message.text.characters.count == 0 {
+            if message.text.count == 0 {
                 return 0
             }
             

@@ -45,7 +45,7 @@ class RoomsTableViewController: UITableViewController, PCChatManagerDelegate {
     
     private func initPusherChatkitManager(completion: @escaping (_ success: PCCurrentUser) -> Void) {
         let chatkit = ChatManager(
-            instanceId: AppConstants.INSTANCE_ID,
+            instanceLocator: AppConstants.INSTANCE_LOCATOR,
             tokenProvider: PCTokenProvider(url: AppConstants.ENDPOINT+"/authenticate", userId: username)
         )
         

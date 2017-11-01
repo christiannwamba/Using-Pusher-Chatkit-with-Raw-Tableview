@@ -26,7 +26,7 @@ class AuthViewController: UIViewController {
     }
     
     @objc func textDidChange(_ sender: Any?) -> Void {
-        loginButton.isEnabled = textField.text!.characters.count >= 3
+        loginButton.isEnabled = textField.text!.count >= 3
     }
     
     @objc func loginButtonWasPressed(_ sender: Any?) -> Void {
